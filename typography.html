@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/x-icon" href="../../Senior Seminar/Alyssa Dodd Designs/images/favicon/favicon.ico">
+<meta charset="UTF-8">
+<title>Alyssa Dodd Designs | Home</title>
+<link rel="stylesheet" href="../../Senior Seminar/Alyssa Dodd Designs/grid.css">
+<style>
+/* --- Gallery Container (Flexbox) --- */
+.gallery-container {
+    display: flex;
+    /* Allows items to wrap to the next line */
+    flex-wrap: wrap; 
+    /* Centers the items when there aren't enough to fill a row */
+    justify-content: center; 
+    padding: 20px;
+    gap: 20px; /* Space between gallery items */
+}
+	/* --- Individual Gallery Item Styling --- */
+.gallery-item {
+    /* Set a basis for the item size */
+    flex-basis: 300px; 
+    /* Allows item to shrink and grow slightly */
+    flex-grow: 1; 
+    /* Prevents item from growing too much */
+    max-width: 400px; 
+    
+    border: 1px solid #4E6562;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #D2ECE6;
+    padding: 10px;
+    margin: 0; /* Override default figure margin */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/*.gallery-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);*/
+}
+	
+/* --- Image and Caption Styling --- */
+.gallery-item img {
+    /* Make image fill its container */
+    width: 100%; 
+    height: auto;
+    /* Keeps images from distorting if they have different aspect ratios */
+    display: block; 
+    /* Optional: for a cleaner look */
+    border-radius: 4px; 
+}
+
+.artwork-caption {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #4E6562;
+    font-style: italic;
+	font-family: times new Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
+
+/* --- Media Query for Smaller Screens (Optional) --- */
+/* On screens smaller than 600px, make items take up more width */
+@media (max-width: 600px) {
+    .gallery-item {
+        flex-basis: 100%; /* Items take full width */
+        max-width: 100%;
+    }
+	</style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="logo"> <img src="../../Senior Seminar/Alyssa Dodd Designs/images/Logo for Website.png" alt="logo" width="150"> </div>
+    <!--closes logo id tag-->
+    <h1>Alyssa Dodd Designs</h1>
+  </header>
+  <nav>
+      <a href="../../Senior Seminar/Alyssa Dodd Designs/index.html">Home</a>
+      <a href="../../Senior Seminar/Alyssa Dodd Designs/about.html">About</a>
+	  <a href="../../Senior Seminar/Alyssa Dodd Designs/gallery.html">Gallery</a>
+      <a href="../../Senior Seminar/Alyssa Dodd Designs/contact.html">Contact</a>
+  </nav>
+ <main>
+    <article class="one">
+      <figure> <img src="../../" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <div class="story">
+          <h1>Typography</h1>
+        <p>As a graphic designer, it's important that I can handle text well. This accomplishes the most clear direction for your companie's message to be heard! You will find my typoraphy works below. </p>
+        <p></p>
+      </div>
+    </article>
+<!--    <header>
+        <h1>My Artwork Portfolio</h1>
+    </header>-->
+    <main class="gallery-container">
+        <figure class="gallery-item">
+            <a>
+                <img src="../../Senior Seminar/Alyssa Dodd Designs/images/typography/typeface.png" alt="<i>Ribbon</i> Typeface">
+            </a>
+            <figcaption class="artwork-caption">
+				<i>Ribbon</i> Typeface.
+            </figcaption>
+        </figure>
+		 <figure class="gallery-item">
+            <a>
+                <img src="../../Senior Seminar/Alyssa Dodd Designs/images/typography/sign1.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+            </a>
+            <figcaption class="artwork-caption">
+				Pick-Up Sign Design for Atoka Public Schools.
+            </figcaption>
+        </figure>
+		 <figure class="gallery-item">
+            <a>
+                <img src="../../Senior Seminar/Alyssa Dodd Designs/images/typography/sign2.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+            </a>
+            <figcaption class="artwork-caption">
+				Pick-Up Sign Design for Atoka Public Schools.
+            </figcaption>
+        </figure>
+		 <figure class="gallery-item">
+            <a>
+                <img src="../../Senior Seminar/Alyssa Dodd Designs/images/typography/sign3.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+            </a>
+            <figcaption class="artwork-caption">
+				Pick-Up Sign Design for Atoka Public Schools.
+            </figcaption>
+        </figure>
+		 <figure class="gallery-item">
+            <a>
+                <img src="../../Senior Seminar/Alyssa Dodd Designs/images/typography/sign4.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+            </a>
+            <figcaption class="artwork-caption">
+				Pick-Up Sign Design for Atoka Public Schools.
+            </figcaption>
+        </figure>
+		 <figure class="gallery-item">
+            <a>
+                <img src="../../Senior Seminar/Alyssa Dodd Designs/images/typography/menu22.png" alt="Menu Design for <i>The Lumpy Pumkin</i> from <i>The Legend of Zelda.</i>">
+            </a>
+            <figcaption class="artwork-caption">
+				Menu Design for <i>The Lumpy Pumkin</i> from <i>The Legend of Zelda</i>.
+            </figcaption>
+        </figure>
+	 </main>
+      </main>
+  <footer>
+    <p>Copyright &copy; | Alyssa Dodd Designs</p>
+  </footer>
+</div>
+<!--closes wrapper id tag-->
+</body>
+</html>
