@@ -83,6 +83,15 @@ main p2 {
 	padding-left: 1.5em;
 	color: #4E6562;
 }
+p {
+	padding-left: 1.5em;
+}
+p1 {
+	padding-left: 1.5em;
+}
+p2 {
+	padding-left: 1.5em;
+}
 article {
      padding: 1em 2em;
     }  
@@ -224,4 +233,5 @@ footer {
   }
 
 }
+
 
