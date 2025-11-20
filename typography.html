@@ -3,11 +3,12 @@
 <head>
 <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
 <meta charset="UTF-8">
-<title>Alyssa Dodd Designs | Home</title>
+<title>Alyssa Dodd Designs | Typography</title>
 <link rel="stylesheet" href="grid.css">
 <style>
 /* --- Gallery Container (Flexbox) --- */
 .gallery-container {
+	object-fit: contain;
     display: flex;
     /* Allows items to wrap to the next line */
     flex-wrap: wrap; 
@@ -57,7 +58,47 @@
     font-style: italic;
 	font-family: times new Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
 }
+.carousel-container {
+    position: relative; 
+    width: 100%; /* Make it responsive to the size of the parent gallery item */
+    height: auto; 
+    aspect-ratio: 4/3; /* Optional: Define a specific ratio for uniformity */
+    overflow: hidden; /* **CRUCIAL:** Hides the extra images */
+    margin: 0;
+}
 
+/* 2. The wrapper lines up all images horizontally */
+.image-wrapper {
+    display: flex; 
+    transition: transform 0.3s ease-in-out; 
+    /* The JavaScript will use transform: translateX(...) to move this wrapper */
+}
+
+/* 3. Each image takes up the full container width and is prevented from shrinking */
+.image-wrapper img {
+    flex-shrink: 0; /* **CRUCIAL:** Prevents image from shrinking to fit */
+    width: 100%; /* **CRUCIAL:** Each image takes up the full 100% of the container */
+    height: auto;
+    object-fit: cover; 
+}
+
+/* --- Button Styling (for context) --- */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4E6562;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10; 
+    user-select: none;
+}
+
+.prev-button { left: 0; border-radius: 0 5px 5px 0; }
+.next-button { right: 0; border-radius: 5px 0 0 5px; }
 /* --- Media Query for Smaller Screens (Optional) --- */
 /* On screens smaller than 600px, make items take up more width */
 @media (max-width: 600px) {
@@ -95,9 +136,70 @@
         <h1>My Artwork Portfolio</h1>
     </header>-->
     <main class="gallery-container">
+		
+	<figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-A"> 
+                <img src="images/typography/2-1.jpg" alt="Atoka Elementary School Pickup Line Sign.">
+                <img src="images/typography/2-2.jpg"
+				alt="Atoka Elementary School Pickup Line Sign.">
+				<img src="images/typography/2-3.jpg" alt="Atoka Elementary School Pickup Line Sign.">
+                <img src="images/typography/2-4.jpg"
+				alt="Atoka Elementary School Pickup Line Sign.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-A', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-A', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        Atoka Elementary School Pickup Line Sign.
+    </figcaption>
+	</figure>
+		
+	<figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-B"> 
+                <img src="images/typography/3-1.jpg" alt="<i>The Lumpy Pumkin</i> from <i>The Legend of Zelda</i> Menu.">
+                <img src="images/typography/3-2.jpg"
+				alt="<i>The Lumpy Pumkin</i> from <i>The Legend of Zelda</i> Menu.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-B', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-B', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        <i>The Lumpy Pumkin</i> from <i>The Legend of Zelda</i> Menu.
+    </figcaption>
+	</figure>
+				  
+	<figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-C"> 
+                <img src="images/typography/7-1.jpg" alt="Personal Studio Art Layout.">
+                <img src="images/typography/7-2.jpg"
+				alt="Personal Studio Art Layout.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-C', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-C', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        Personal Studio Art Layout.
+    </figcaption>
+	</figure>
+			 
         <figure class="gallery-item">
             <a>
-                <img src="images/typography/typeface.png" alt="<i>Ribbon</i> Typeface">
+                <img src="images/typography/1.jpg" alt="<i>Ribbon</i> Typeface.">
             </a>
             <figcaption class="artwork-caption">
 				<i>Ribbon</i> Typeface.
@@ -105,42 +207,34 @@
         </figure>
 		 <figure class="gallery-item">
             <a>
-                <img src="images/typography/sign1.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+                <img src="images/typography/8.jpg" alt="Magazine Layout 1.">
             </a>
             <figcaption class="artwork-caption">
-				Pick-Up Sign Design for Atoka Public Schools.
+				Magazine Layout 1.
             </figcaption>
         </figure>
 		 <figure class="gallery-item">
             <a>
-                <img src="images/typography/sign2.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+                <img src="images/typography/4.jpg" alt="Magazine Layout 2.">
             </a>
             <figcaption class="artwork-caption">
-				Pick-Up Sign Design for Atoka Public Schools.
+				Magazine Layout 2.
             </figcaption>
         </figure>
 		 <figure class="gallery-item">
             <a>
-                <img src="images/typography/sign3.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+                <img src="images/typography/5.jpg" alt="Restaurant Advertisment.">
             </a>
             <figcaption class="artwork-caption">
-				Pick-Up Sign Design for Atoka Public Schools.
+				Restaurant Advertisement.
             </figcaption>
         </figure>
 		 <figure class="gallery-item">
             <a>
-                <img src="images/typography/sign4.png" alt="Pick-Up Sign Design for Atoka Public Schools">
+                <img src="images/typography/6.jpg" alt="Book Design Front and Back.">
             </a>
             <figcaption class="artwork-caption">
-				Pick-Up Sign Design for Atoka Public Schools.
-            </figcaption>
-        </figure>
-		 <figure class="gallery-item">
-            <a>
-                <img src="images/typography/menu22.png" alt="Menu Design for <i>The Lumpy Pumkin</i> from <i>The Legend of Zelda.</i>">
-            </a>
-            <figcaption class="artwork-caption">
-				Menu Design for <i>The Lumpy Pumkin</i> from <i>The Legend of Zelda</i>.
+				Book Design Front and Back.
             </figcaption>
         </figure>
 	 </main>
@@ -149,7 +243,44 @@
     <p>Copyright &copy; | Alyssa Dodd Designs</p>
   </footer>
 </div>
+<script>
+// This object stores the current index for EVERY carousel on the page
+const carouselIndexes = {};
+
+function scrollCarousel(wrapperId, direction) {
+    const wrapper = document.getElementById(wrapperId);
+    
+    // Check 1: Ensure the wrapper element exists
+    if (!wrapper) {
+        console.error(`Carousel wrapper with ID "${wrapperId}" not found.`);
+        return; 
+    } 
+
+    const images = wrapper.querySelectorAll('img');
+    const totalImages = images.length;
+    
+    // Initialize the index for this specific carousel if it doesn't exist
+    if (carouselIndexes[wrapperId] === undefined) {
+        carouselIndexes[wrapperId] = 0;
+    }
+    
+    let currentIndex = carouselIndexes[wrapperId];
+
+    // Check 2: Update the index based on direction
+    if (direction === 'right') {
+        currentIndex = (currentIndex + 1) % totalImages;
+    } else if (direction === 'left') {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    }
+    
+    // Save the new index back to the global tracker
+    carouselIndexes[wrapperId] = currentIndex;
+
+    // Check 3: Apply the transformation
+    const offset = -currentIndex * 100;
+    wrapper.style.transform = `translateX(${offset}%)`;
+}
+</script>
 <!--closes wrapper id tag-->
 </body>
 </html>
-
