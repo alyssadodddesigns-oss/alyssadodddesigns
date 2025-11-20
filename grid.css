@@ -80,6 +80,7 @@ main h2 {
 	color: #4E6562;
 }
 main p2 { 
+	padding-left: 1.5em;
 	color: #4E6562;
 }
 article {
@@ -223,3 +224,4 @@ footer {
   }
 
 }
+
