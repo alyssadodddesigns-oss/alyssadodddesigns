@@ -72,8 +72,7 @@ main img {
 main h1 {
     padding-left: 1.5em;
 }
-main p { 
-	padding-left: 1.5em;
+main p {   
 }
 main h2 {
     padding-left: 1.5em;
@@ -221,9 +220,4 @@ footer {
       margin-right: 0;
 		border-bottom: 1px solid #4E6562;
   }
-
 }
-
-
-
-
