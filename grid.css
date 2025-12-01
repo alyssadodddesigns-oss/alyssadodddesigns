@@ -85,7 +85,7 @@ article {
      padding: 1em 2em;
     }  
 article img {
-	width: 100%;  
+    width: 100%;  
 }
 
 .gallery {
@@ -108,8 +108,8 @@ article.one {
 }
 article.two img {
     width: 100%;
-    max-width: auto;
-    max-height: auto;
+    max-width: 500px;
+    max-height: 300px;
 }
 footer {
   background-color: #4E6562;
@@ -221,5 +221,3 @@ footer {
 		border-bottom: 1px solid #4E6562;
   }
 }
-
-
