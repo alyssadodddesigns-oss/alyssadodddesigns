@@ -107,9 +107,8 @@ article.one {
     color: #FFFFFF;
 }
 article.two img {
-    width: 100%;
-    max-width: 500px;
-    max-height: 300px;
+    max-width: 50%;
+	height: 50%;
 }
 footer {
   background-color: #4E6562;
@@ -137,7 +136,7 @@ footer {
   grid-area: footer;
 }
 /*tablet css*/
-@media (min-width: 600px) {
+@media (min-width: 400px) {
   .wrapper {
     display: grid;
     grid-template-columns: auto;
