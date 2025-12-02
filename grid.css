@@ -85,7 +85,7 @@ article {
      padding: 1em 2em;
     }  
 article img {
-    width: 100%;  
+      
 }
 
 .gallery {
@@ -220,5 +220,6 @@ footer {
 		border-bottom: 1px solid #4E6562;
   }
 }
+
 
 
