@@ -136,7 +136,7 @@ footer {
   grid-area: footer;
 }
 /*tablet css*/
-@media (min-width: 400px) {
+@media (max-width: 600px) {
   .wrapper {
     display: grid;
     grid-template-columns: auto;
@@ -220,3 +220,4 @@ footer {
 		border-bottom: 1px solid #4E6562;
   }
 }
+
