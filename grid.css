@@ -85,8 +85,7 @@ article {
      padding: 1em 2em;
     }  
 article img {
-  max-width: 50%;
-	height: 50%;    
+    width: 100%;  
 }
 
 .gallery {
@@ -109,7 +108,7 @@ article.one {
 }
 article.two img {
     max-width: 50%;
-	height: 50%;
+	height: 50;
 }
 footer {
   background-color: #4E6562;
@@ -137,7 +136,7 @@ footer {
   grid-area: footer;
 }
 /*tablet css*/
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .wrapper {
     display: grid;
     grid-template-columns: auto;
@@ -221,7 +220,3 @@ footer {
 		border-bottom: 1px solid #4E6562;
   }
 }
-
-
-
-
