@@ -136,7 +136,7 @@ footer {
   grid-area: footer;
 }
 /*tablet css*/
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .wrapper {
     display: grid;
     grid-template-columns: auto;
@@ -206,6 +206,7 @@ footer {
  	flex-direction: column;
 	justify-content: flex-start;
     gap: 0;
+	text-decoration: none;
   }
   nav a {
     display: block;
@@ -220,4 +221,3 @@ footer {
 		border-bottom: 1px solid #4E6562;
   }
 }
-
