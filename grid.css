@@ -13,7 +13,7 @@ body {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-      "nav"
+        "nav"
 		"header"
 		"hero"
       	"main"
@@ -23,7 +23,11 @@ body {
   margin: auto;	
 }
 header {
-  text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+  	text-align: center;
 	margin: 0em;
   /*margin-bottom: .2em;*/
 }
@@ -87,6 +91,15 @@ article {
 article img {
     width: 100%;  
 }
+ article.one {
+    display: flex;
+    border-bottom: 1px solid #4E6562;
+  }
+  article.two {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 2em;
+  }
 
 .gallery {
     display: grid;
@@ -221,4 +234,3 @@ footer {
 		border-bottom: 1px solid #4E6562;
   }
 }
-
