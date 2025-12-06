@@ -165,7 +165,7 @@ footer {
       "hero"
       "main"
       "footer";
-    max-width: 1200px;
+    max-width: 2000px;
     margin: auto;
 	box-shadow: 5px 5px 5px #806762;
   }
@@ -205,6 +205,7 @@ footer {
 	height: 10%;
 }
 }
+
 
 
 
