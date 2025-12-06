@@ -90,7 +90,7 @@ main p2 {
 	color: #4E6562;
 }
 article {
-     padding: 1em 2em;
+     /*padding: 1em 2em;*/
     }  
 article img {
     width: 100%;  
@@ -102,7 +102,7 @@ article img {
   article.two {
     display: flex;
     flex-direction: row-reverse;
-    padding: 2em;
+    /*padding: 2em;*/
   }
 
 .gallery {
@@ -205,6 +205,7 @@ footer {
 	height: 10%;
 }
 }
+
 
 
 
