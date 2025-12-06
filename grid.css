@@ -90,11 +90,10 @@ main p2 {
 	color: #4E6562;
 }
 article {
-     /*padding: 1em 2em;*/
+     padding: 1em 2em;
     }  
 article img {
-	display: none;
-    /*width: 100%;*/
+    width: 100%;  
 }
  article.one {
     display: flex;
@@ -103,7 +102,7 @@ article img {
   article.two {
     display: flex;
     flex-direction: row-reverse;
-    /*padding: 2em;*/
+    padding: 2em;
   }
 
 .gallery {
@@ -121,13 +120,12 @@ article img {
 }
 article.one {
   background-color: #4E6562;
-    /*padding: .5em;*/
+    padding: .5em;
     color: #FFFFFF;
 }
 article.two img {
-	display: none;
-    /*max-width: 50%;
-	height: 50%;*/
+    max-width: 50%;
+	height: 50%;
 }
 footer {
   background-color: #4E6562;
@@ -207,15 +205,3 @@ footer {
 	height: 10%;
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
