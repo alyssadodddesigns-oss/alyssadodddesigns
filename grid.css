@@ -154,7 +154,7 @@ footer {
 }
 /*tablet css*/
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .wrapper {
     display: grid;
     grid-template-columns: auto;
@@ -259,4 +259,5 @@ footer {
   }*/
 
 }
+
 
