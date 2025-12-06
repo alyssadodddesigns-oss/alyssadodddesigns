@@ -121,7 +121,7 @@ article img {
 }
 article.one {
   background-color: #4E6562;
-    padding: .5em;
+    /*padding: .5em;*/
     color: #FFFFFF;
 }
 article.two img {
@@ -207,6 +207,7 @@ footer {
 	height: 10%;
 }
 }
+
 
 
 
