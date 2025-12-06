@@ -93,7 +93,8 @@ article {
      /*padding: 1em 2em;*/
     }  
 article img {
-    width: 100%;  
+	display: none;
+    /*width: 100%;*/
 }
  article.one {
     display: flex;
@@ -124,8 +125,9 @@ article.one {
     color: #FFFFFF;
 }
 article.two img {
-    max-width: 50%;
-	height: 50%;
+	display: none;
+    /*max-width: 50%;
+	height: 50%;*/
 }
 footer {
   background-color: #4E6562;
@@ -205,6 +207,7 @@ footer {
 	height: 10%;
 }
 }
+
 
 
 
