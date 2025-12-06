@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/x-icon" href="../../Personal/Alyssa Dodd Designs/images/favicon/favicon.ico">
+<meta charset="UTF-8">
+<title>Alyssa Dodd Designs | Gallery</title>
+<link rel="stylesheet" href="../../Personal/Alyssa Dodd Designs/grid.css">
+<style>
+/* --- Gallery Container (Flexbox) --- */
+.gallery-container {
+    display: flex;
+    /* Allows items to wrap to the next line */
+    flex-wrap: wrap; 
+    /* Centers the items when there aren't enough to fill a row */
+    justify-content: center; 
+    padding: 20px;
+    gap: 20px; /* Space between gallery items */
+}
+	/* --- Individual Gallery Item Styling --- */
+.gallery-item {
+    /* Set a basis for the item size */
+    flex-basis: 300px; 
+    /* Allows item to shrink and grow slightly */
+    flex-grow: 1; 
+    /* Prevents item from growing too much */
+    max-width: 400px; 
+    
+    border: 1px solid #4E6562;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #D2ECE6;
+    padding: 10px;
+    margin: 0; /* Override default figure margin */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/*.gallery-item:hover {
+    transform: translateY(-5px);*/ /* Lift effect on hover */
+ /*   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}*/
+
+/* --- Image and Caption Styling --- */
+.gallery-item img {
+    /* Make image fill its container */
+    width: 100%; 
+    height: auto;
+    /* Keeps images from distorting if they have different aspect ratios */
+    display: block; 
+    /* Optional: for a cleaner look */
+    border-radius: 4px; 
+}
+
+.artwork-caption {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #4E6562;
+    font-style: italic;
+	font-family: times new Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+}
+.carousel-container {
+    position: relative; 
+    width: 100%; /* Make it responsive to the size of the parent gallery item */
+    /*height: auto; */
+    /*aspect-ratio: 4/3;*/ /* Optional: Define a specific ratio for uniformity */
+    overflow: hidden; /* **CRUCIAL:** Hides the extra images */
+    margin: 0;
+}
+
+/* 2. The wrapper lines up all images horizontally */
+.image-wrapper {
+    display: flex; 
+    transition: transform 0.3s ease-in-out; 
+    /* The JavaScript will use transform: translateX(...) to move this wrapper */
+}
+
+/* 3. Each image takes up the full container width and is prevented from shrinking */
+.image-wrapper img {
+    flex-shrink: 0; /* **CRUCIAL:** Prevents image from shrinking to fit */
+    width: 100%; /* **CRUCIAL:** Each image takes up the full 100% of the container */
+    height: auto;
+    object-fit: cover; 
+}
+
+/* --- Button Styling (for context) --- */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4E6562;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10; 
+    user-select: none;
+}
+
+.prev-button { left: 0; border-radius: 0 5px 5px 0; }
+.next-button { right: 0; border-radius: 5px 0 0 5px; }
+/* --- Media Query for Smaller Screens (Optional) --- */
+/* On screens smaller than 600px, make items take up more width */
+@media (max-width: 600px) {
+    .gallery-item {
+        flex-basis: 100%; /* Items take full width */
+        max-width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+  <header>
+    <div class="logo"> <img src="images/Logo for Website.png" alt="logo" width="150"> </div>
+    <!--closes logo class tag-->
+    <h1>Alyssa Dodd Designs</h1>
+  </header>
+  <nav>
+     <a href="../../Personal/Alyssa Dodd Designs/index.html">Home</a>
+      <a href="../../Personal/Alyssa Dodd Designs/about.html">About</a>
+	  <a href="../../Personal/Alyssa Dodd Designs/gallery.html">Gallery</a>
+      <a href="../../Personal/Alyssa Dodd Designs/contact.html">Contact</a>
+  </nav>
+	<main>
+	    <article class="one">
+     <figure> <img src="../../" alt="">
+        <figcaption></figcaption>
+      </figure>
+      <div class="story">
+          <h1>Gallery</h1>
+        <p>Here you can view a range of my graphic design work.</p>
+        <p></p>
+      </div>
+    </article>
+ <main class="gallery-container">
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/7.jpg" alt="Swatch Watch Packaging Design and Mockup.">
+            </a>
+            <figcaption class="artwork-caption">
+              Swatch Watch Packaging Design and Mockup.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-A"> 
+                <img src="../../Personal/Alyssa Dodd Designs/images/5-1.jpg" alt="Personal Branding Layout.">
+                <img src="../../Personal/Alyssa Dodd Designs/images/5-2.jpg" alt="Personal Branding Layout.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-A', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-A', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        Personal Branding Layout.
+    </figcaption>
+</figure>
+        
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/21.jpg" alt="Book Cover Design Front and Back.">
+            </a>
+            <figcaption class="artwork-caption">
+            Book Cover Design Front and Back.
+            </figcaption>
+        </figure>
+	 
+	 	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/9.jpg" alt="Cry of a Banshee Song by Blackbriar Movie Poster Design.">
+            </a>
+            <figcaption class="artwork-caption">
+            Cry of a Banshee Song by Blackbriar Movie Poster Design.
+            </figcaption>
+        </figure>	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/10.jpg" alt="Art Deco Travel Poster.">
+            </a>
+            <figcaption class="artwork-caption">
+            Art Deco Travel Poster.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/20.jpg" alt="Restaurant Advertisment.">
+            </a>
+            <figcaption class="artwork-caption">
+             Restaurant Advertisment.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/26.jpg" alt="Coffee Packaging Design and Mockup.">
+            </a>
+            <figcaption class="artwork-caption">
+            Coffee Packaging Design and Mockup.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-B"> 
+                <img src="../../Personal/Alyssa Dodd Designs/images/17-1.jpg" alt="Atoka Public Schools Pick-Up Line Signs.">
+                <img src="../../Personal/Alyssa Dodd Designs/images/17-2.jpg" alt="Atoka Public Schools Pick-Up Line Signs.">
+				<img src="../../Personal/Alyssa Dodd Designs/images/17-3.jpg" alt="Atoka Public Schools Pick-Up Line Signs.">
+                <img src="../../Personal/Alyssa Dodd Designs/images/17-4.jpg" alt="Atoka Public Schools Pick-Up Line Signs.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-B', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-B', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        Atoka Public Schools Pick-Up Line Signs.
+    </figcaption>
+</figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/28.jpg" alt="Desktop Background Design.">
+            </a>
+            <figcaption class="artwork-caption">
+            Desktop Background Design.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/3.jpg" alt="Moyers Highschool Basketball Banner.">
+            </a>
+            <figcaption class="artwork-caption">
+              Moyers Highschool Basketball Banner.
+            </figcaption>
+        </figure>
+
+          <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/1.jpg" alt="Atoka Highschool Basketball Banner.">
+            </a>
+            <figcaption class="artwork-caption">
+              Atoka Highschool Basketball Banner.
+            </figcaption>
+        </figure>
+	 
+	   <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/4.jpg" alt="Coalgate Highschool Golf Banner.">
+            </a>
+            <figcaption class="artwork-caption">
+              Coalgate Highschool Golf Banner.
+            </figcaption>
+        </figure>
+		
+		 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/29.jpg" alt="Team Supreme Training Logo.">
+            </a>
+            <figcaption class="artwork-caption">
+             Team Supreme Training Logo.
+            </figcaption>
+        </figure>
+	 
+	  <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/30.jpg" alt="Proco Athletics Logo.">
+            </a>
+            <figcaption class="artwork-caption">
+             Proco Athletics Logo.
+            </figcaption>
+        </figure>
+	 
+	  <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/32.jpg" alt="Personal Brand Logo.">
+            </a>
+            <figcaption class="artwork-caption">
+             Personal Brand Logo.
+            </figcaption>
+        </figure> 
+	 
+	 <figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-C"> 
+                <img src="../../Personal/Alyssa Dodd Designs/images/2-3.jpg" alt="Car in Cherokee Syllabary Wrap.">
+                <img src="../../Personal/Alyssa Dodd Designs/images/2-2.jpg" alt="Car in Cherokee Syllabary Wrap.">
+				 <img src="../../Personal/Alyssa Dodd Designs/images/2-1.jpg" alt="Car in Cherokee Syllabary Wrap.">
+				 <img src="../../Personal/Alyssa Dodd Designs/images/2-4.jpg" alt="Car in Cherokee Syllabary Wrap.">
+				 <img src="../../Personal/Alyssa Dodd Designs/images/2-5.jpg" alt="Car in Cherokee Syllabary Wrap.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-C', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-C', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        Car in Cherokee Syllabary Wrap.
+    </figcaption>
+</figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/15.jpg" alt="Advantage Motor Group Banner.">
+            </a>
+            <figcaption class="artwork-caption">
+             Advantage Motor Group Banner.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/24.jpg" alt="Cereal Box Packiaging Design.">
+            </a>
+            <figcaption class="artwork-caption">
+             Cereal Box Packiaging Design.
+            </figcaption>
+        </figure>
+	 
+	  <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/27.jpg" alt="Digital Design.">
+            </a>
+            <figcaption class="artwork-caption">
+             Digital Design.
+            </figcaption>
+        </figure>
+	 
+	  <figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-D"> 
+                <img src="../../Personal/Alyssa Dodd Designs/images/6-1.jpg" alt="Alberta Creek Slips.">
+                <img src="../../Personal/Alyssa Dodd Designs/images/23.jpg" alt="Alberta Creek Slips.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-D', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-D', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        Alberta Creek Slips.
+    </figcaption>
+</figure>
+	 
+	<figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/14.jpg" alt="C&C Hardware Sign.">
+            </a>
+            <figcaption class="artwork-caption">
+             C&C Hardware Sign.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/8.jpg" alt="Poster for Fall 2025 Senior Show.">
+            </a>
+            <figcaption class="artwork-caption">
+             Poster for Fall 2025 Senior Show.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/16.jpg" alt="Ribbon Typeface.">
+            </a>
+            <figcaption class="artwork-caption">
+            Ribbon Typeface.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/31.jpg" alt="PBS Poolcare Logo.">
+            </a>
+            <figcaption class="artwork-caption">
+             PBS Poolcare Logo.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/25.jpg" alt="Coffee House Advertisment.">
+            </a>
+            <figcaption class="artwork-caption">
+             Coffee House Advertisment.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/22.jpg" alt="Magazine Layout 1.">
+            </a>
+            <figcaption class="artwork-caption">
+             Magazine Layout 1.
+            </figcaption>
+        </figure>
+	 
+	 <figure class="gallery-item">
+            <a>
+                <img src="../../Personal/Alyssa Dodd Designs/images/19.jpg" alt="Magazine Layout 2.">
+            </a>
+            <figcaption class="artwork-caption">
+             Magazine Layout 2.
+            </figcaption>
+        </figure>
+	 
+	  
+	 
+	<figure class="gallery-item">
+    <a class="carousel-link"> 
+        
+        <div class="carousel-container">
+            <div class="image-wrapper" id="image-wrapper-E"> 
+                <img src="../../Personal/Alyssa Dodd Designs/images/18-2.jpg" alt="The Lumpy Pumkin from The Legend of Zelda Rack Card Menu.">
+                <img src="../../Personal/Alyssa Dodd Designs/images/18-1.jpg" alt="The Lumpy Pumkin from The Legend of Zelda Rack Card Menu.">
+            </div>
+            
+            <button class="prev-button" onclick="scrollCarousel('image-wrapper-E', 'left')">&#10094;</button>
+            <button class="next-button" onclick="scrollCarousel('image-wrapper-E', 'right')">&#10095;</button>
+        </div>
+        </a>
+    <figcaption class="artwork-caption">
+        The Lumpy Pumkin from The Legend of Zelda Rack Card Menu.
+    </figcaption>
+</figure>
+	 
+	 
+
+      </main>
+	</main>
+  <footer>
+    <p>Copyright &copy; | Alyssa Dodd Designs</p>
+  </footer>
+</div>
+<!--closes wrapper id tag-->
+<script>
+// This object stores the current index for EVERY carousel on the page
+const carouselIndexes = {};
+
+function scrollCarousel(wrapperId, direction) {
+    const wrapper = document.getElementById(wrapperId);
+    
+    // Check 1: Ensure the wrapper element exists
+    if (!wrapper) {
+        console.error(`Carousel wrapper with ID "${wrapperId}" not found.`);
+        return; 
+    } 
+
+    const images = wrapper.querySelectorAll('img');
+    const totalImages = images.length;
+    
+    // Initialize the index for this specific carousel if it doesn't exist
+    if (carouselIndexes[wrapperId] === undefined) {
+        carouselIndexes[wrapperId] = 0;
+    }
+    
+    let currentIndex = carouselIndexes[wrapperId];
+
+    // Check 2: Update the index based on direction
+    if (direction === 'right') {
+        currentIndex = (currentIndex + 1) % totalImages;
+    } else if (direction === 'left') {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    }
+    
+    // Save the new index back to the global tracker
+    carouselIndexes[wrapperId] = currentIndex;
+
+    // Check 3: Apply the transformation
+    const offset = -currentIndex * 100;
+    wrapper.style.transform = `translateX(${offset}%)`;
+}
+</script>
+</body>
+</html>
